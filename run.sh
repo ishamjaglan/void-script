@@ -111,7 +111,7 @@ select choice in "${choices[@]}"; do
             wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
             && unzip SecList.zip \
             && rm -f SecList.zip
-            sudo mv SecLists
+            sudo mv SecLists /usr/share/
             
             #haiti-hash
             sudo gem install haiti-hash
