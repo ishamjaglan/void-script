@@ -77,14 +77,17 @@ select choice in "${choices[@]}"; do
 
             echo -e "\n So you want to be a hacker XD"
             echo -e "\nInstalling the tools"
-            sudo xbps-install -S nmap binwalk sqlmap wireshark ftp ghidra john netcat hashcat thc-hydra ruby rust go sqlite nodejs python3 python3-pip wget
+            sudo xbps-install -Sy nmap binwalk sqlmap wireshark ghidra john netcat hashcat thc-hydra ruby rust go sqlite nodejs python3 python3-pip wget gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
             
             #rubygems
             curl -L "https://rubygems.org/rubygems/rubygems-3.2.21.tgz" -o "rubygems.tgz"
             tar -xvzf rubygems.tgz
+            cd rubygems-3.2.21
             sudo ruby setup.rb
-            
+            cd ..
+
             #wpscan
+            sudo gem install nokogiri
             sudo gem install wpscan
             
             #rust-cargo
@@ -93,24 +96,9 @@ select choice in "${choices[@]}"; do
             
             #rustscan
             sudo cargo install rustscan
-            
-            #metasploit framework
-            curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-            chmod 755 msfinstall && \
-            ./msfinstall
-
-            #Veil-Evasion
-            pip install pycrypto
-            git clone https://github.com/Veil-Framework/Veil-Evasion.git
-            cd Veil-Evasion/
-            cd setup
-            chmod +x setup.sh
-            sudo setup.sh -c
 
             #SecLists
-            wget -c https://github.com/danielmiessler/SecLists/archive/master.zip -O SecList.zip \
-            && unzip SecList.zip \
-            && rm -f SecList.zip
+            git clone https://github.com/danielmiessler/SecLists.git
             sudo mv SecLists /usr/share/
             
             #haiti-hash
@@ -119,7 +107,12 @@ select choice in "${choices[@]}"; do
             #ffuf
             sudo go get -u github.com/ffuf/ffuf
 
-            #
+
+
+            #metasploit framework
+            curl -L "http://downloads.metasploit.com/data/releases/metasploit-latest-linux-installer.run" -o "msfinstall"
+            chmod +x msfinstall
+            sudo ./msfinstall
 
             sleep 1
             break

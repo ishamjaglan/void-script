@@ -18,7 +18,6 @@
     rustscan
     metasploit framework
     Weevely
-    Veil-Evasion
     Seclists
     haiti-hash
     ffuf
