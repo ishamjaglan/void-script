@@ -77,7 +77,7 @@ select choice in "${choices[@]}"; do
 
             echo -e "\n So you want to be a hacker XD"
             echo -e "\nInstalling the tools"
-            sudo xbps-install -Sy nmap binwalk sqlmap wireshark ghidra john netcat hashcat thc-hydra ruby rust go sqlite nodejs python3 python3-pip wget gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel
+            sudo xbps-install -Sy nmap binwalk sqlmap wireshark ghidra john netcat hashcat thc-hydra ruby rust go sqlite nodejs python3 python3-pip wget gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel inetutils
             
             #rubygems
             curl -L "https://rubygems.org/rubygems/rubygems-3.2.21.tgz" -o "rubygems.tgz"
