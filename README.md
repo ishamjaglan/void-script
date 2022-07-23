@@ -1,6 +1,6 @@
 # void-script
 	Easily setup your void linux as per your needs
-	Options to install Discord, VSCode , Steam and Some Hacking Tools
+	Options to install Discord, VSCode , Steam, LibreOffice, Spotify, Bitwarden, QEMU and Some Hacking Tools
 
 # Usage:
 	
