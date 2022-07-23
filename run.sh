@@ -59,7 +59,7 @@ select choice in "${choices[@]}"; do
           yes)
 
             echo -e "\nInstalling VSCode"
-            sudo xbps-install -Sy vscode
+	    flatpak install -y com.visualstudio.code
             sleep 1
             break
             ;;
@@ -189,7 +189,7 @@ select choice in "${choices[@]}"; do
         case $choice in
           yes)
 
-            echo -e "\nInstalling Spotify"
+            echo -e "\nInstalling Bitwarden"
 	    flatpak install -y com.bitwarden.desktop
 	    sleep 1
             break
